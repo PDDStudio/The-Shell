@@ -1,6 +1,6 @@
-# The Shell
+# The Shell *Revamped*
 
-Simple theme for [Ghost](http://github.com/tryghost/ghost/).
+Simple theme for [Ghost](http://github.com/tryghost/ghost/), based on [The Shell](https://github.com/mityalebedev/The-Shell) by [mityalebedev](https://github.com/mityalebedev).
 
 * Pure CSS
 * Web Safe fonts
