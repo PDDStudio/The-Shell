@@ -1,38 +1,52 @@
 {
-    "name": "the-shell-revamped",
-    "description" : "Revamped version of The-Shell theme for Ghost.",
-    "demo": "https://demo.ghost.io",
-    "version": "0.0.1",
-    "engines": {
-        "ghost": ">=0.4.0 <=1.0.0"
-    },
-    "license": "MIT",
-    "author": {
-        "name": "Patrick Jung",
-        "email": "patrick.pddstudio@gmail.com",
-        "url": "https://pddstudio.io"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Personal Blogs"
-        ]
-    },
-    "keywords": [
-        "ghost",
-        "theme"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/pddstudio/the-shell-revamped.git"
-    },
-    "bugs": "https://github.com/pddstudio/the-shell-revamped/issues",
-    "contributors": [
-        {
-            "name": "Dmitry Lebedev",
-            "email": "mityalebedev@me.com",
-            "url": "https://dmitrylebedev.me"
-        }
+  "name": "the-shell-revamped",
+  "description": "Revamped version of The-Shell theme for Ghost.",
+  "demo": "https://demo.ghost.io",
+  "version": "0.0.1",
+  "engines": {
+    "ghost": ">=0.4.0 <=1.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Patrick Jung",
+    "email": "patrick.pddstudio@gmail.com",
+    "url": "https://pddstudio.io"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Personal Blogs"
     ]
+  },
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pddstudio/the-shell-revamped.git"
+  },
+  "bugs": "https://github.com/pddstudio/the-shell-revamped/issues",
+  "contributors": [
+    {
+      "name": "Dmitry Lebedev",
+      "email": "mityalebedev@me.com",
+      "url": "https://dmitrylebedev.me"
+    }
+  ],
+  "dependencies": {
+    "autoprefixer": "^7.1.2",
+    "chokidar-cli": "^1.2.0",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.0.2",
+    "postcss-cli": "^4.1.0"
+  },
+  "scripts": {
+    "build-task:scss-compile": "node-sass-chokidar --source-map true assets/scss/ -o assets/css",
+    "build-task:autoprefixer": "postcss assets/css/*.css --use autoprefixer -d assets/css",
+    "sass:build": "npm-run-all -p build-task:*",
+    "sass:watch": "chokidar 'assets/scss/**/*.scss' -c 'npm run sass:build'",
+    "dev": "npm-run-all -p sass:*"
+  }
 }
